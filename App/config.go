@@ -5,10 +5,10 @@ import (
 	"log"
 )
 
-var Config = ConfigParam
+var Config ConfigParam
 
 //配置参数
-var ConfigParam struct{
+type ConfigParam struct{
 	DEBUG bool
 	ENV string
 	Server string

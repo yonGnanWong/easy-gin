@@ -55,3 +55,4 @@ export GOPROXY=https://goproxy.io 然后在terminal中输入 echo $GOPROXY 查�
     热加载
     // kill -USR2 pid 重启服务
     // kill -INT pid 关闭服务
+    
