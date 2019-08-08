@@ -36,7 +36,7 @@ func InitDb() {
 	}
 
 	//将sql写入log
-	db.SetLogger(xorm.NewSimpleLogger(LogWriter))
+	//db.SetLogger(xorm.NewSimpleLogger(LogWriter))
 	//设置db连接池最大链接数和最大打开链接数
 	db.SetMaxIdleConns(MaxIdleConns)
 	db.SetMaxOpenConns(MaxOpenConns)

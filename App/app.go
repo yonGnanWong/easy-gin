@@ -16,6 +16,7 @@ func Run() {
 	InitConfig()
 	InitDb()
 	InitRedis()
+	initCron()
 	Routers.InitRouters(R)
 
 	//server start
