@@ -1,8 +1,9 @@
 package App
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func InitServer() *http.Server {
@@ -10,7 +11,7 @@ func InitServer() *http.Server {
 	gin.SetMode(Config.RunMode)
 
 	server := &http.Server{
-		Addr : Config.Server,
+		Addr:    Config.Server,
 		Handler: R,
 	}
 

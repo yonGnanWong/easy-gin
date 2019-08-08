@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"flag"
+	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -14,10 +15,9 @@ import (
 	"time"
 )
 
-
 var (
 	listener net.Listener = nil
-	graceful =  flag.Bool("graceful", false, "listen on fd open 3 (internal use only)")
+	graceful =  flag.Bool("graceful", false, "listen on fd open 3")
 )
 
 //监听服务器
@@ -43,10 +43,12 @@ func ListenAndServer(server *http.Server){
 		log.Printf("Actual pid is %d\n", syscall.Getpid())
 	}
 	if err != nil{
+		fmt.Printf("listener error: %v\n",err)
 		log.Fatalf("listener error: %v\n",err)
 	}
 	go func(){
 		err = server.Serve(listener)
+		fmt.Printf("server.Serve err: %v\n",err)
 		log.Printf("server.Serve err: %v\n",err)
 		tcp,_ := listener.(*net.TCPListener)
 		fd,_ := tcp.File()

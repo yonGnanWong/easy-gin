@@ -9,8 +9,8 @@ Component:
     MaxOpenConns: 50
     MaxIdleConns: 30
   Redis:
-    Addr: "127.0.0.1:3306"
-    Password: "xxxxxxxx"
-    Database: 1
+    Addr: "localhost:6379"
+    Password: ""
+    Database: 0
 #  params:
-#  如果有新参数可放开注释.自己增加
+#  如果有新参数可放开注释.自己增加 注入:冒号后必须带个空格
