@@ -21,6 +21,7 @@ require (
 	github.com/go-kit/kit v0.9.0 // indirect
 	github.com/go-redis/redis v6.15.3+incompatible
 	github.com/go-sql-driver/mysql v1.4.1
+	github.com/go-xorm/cmd/xorm v0.0.0-20190426080617-f87981e709a1 // indirect
 	github.com/golang/groupcache v0.0.0-20190702054246-869f871628b6 // indirect
 	github.com/google/pprof v0.0.0-20190723021845-34ac40c74b70 // indirect
 	github.com/gpmgo/gopm v0.6.5 // indirect

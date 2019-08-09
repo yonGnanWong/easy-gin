@@ -1,8 +1,9 @@
 package App
 
 import (
+	"gin/Database"
 	"gin/Routers"
-	"gin/Service"
+	"gin/Service/Server"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,13 +14,13 @@ var R = gin.New()
 func Run() {
 	//初始化框架配置
 	//InitLog()
-	InitConfig()
-	InitDb()
-	InitRedis()
-	initCron()
+	initConfig()
+	Database.InitDb()
+	Database.InitRedis()
 	Routers.InitRouters(R)
+	//initCron()
 
 	//server start
 	s := InitServer()
-	Service.ListenAndServer(s)
+	Server.ListenAndServer(s)
 }

@@ -1,18 +1,19 @@
 package App
 
 import (
-	"fmt"
+	"gin/Console"
 	"github.com/robfig/cron"
 )
 
 func initCron()  {
 	go func() {
 		c := cron.New()
-		_ = c.AddFunc("*/1 * * * *", func() {
-			i := 0
-			i++
-			fmt.Printf("cron running %d",i)
-		})
+
+
+		//新增一个脚本运行
+		_ = c.AddFunc("* * * * *", Console.Test1)
+
+
 		c.Start()
 	}()
 }

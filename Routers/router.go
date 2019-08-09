@@ -1,7 +1,7 @@
 package Routers
 
 import (
-	V1 "gin/Api/v1"
+	"gin/Api/v1"
 	"gin/Middleware"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -11,8 +11,9 @@ func InitRouters(R *gin.Engine) {
 	//加载中间件模块
 	//终止前端options请求,直接放回
 	R.Use(Middleware.Options)
+	//R.Use(Middleware.Logger())
 	R.Use(gin.Recovery())
-	R.Use(Middleware.Logger())
+	R.Use(gin.Logger())
 	//R.Use(Middleware.GlobalMiddleware)
 
 	//404处理
@@ -21,11 +22,11 @@ func InitRouters(R *gin.Engine) {
 	})
 
 	//路由分组
-	v1 := R.Group("api/v1")
+	r1 := R.Group("api/v1")
 	{
 		//路由设置示例
-		v1.POST("/post", V1.Post)
-		v1.GET("/", V1.GetData)
+		r1.POST("/post", v1.Post)
+		r1.GET("/", v1.GetData)
 	}
 
 	return

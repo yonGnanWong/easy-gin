@@ -1,4 +1,4 @@
-package App
+package Database
 
 import (
 	"log"
@@ -28,7 +28,7 @@ func InitDb() {
 		log.Panic("database error ")
 	}
 
-	if Config.DEBUG {
+	if viper.GetBool("Debug") {
 		//则会在控制台打印出生成的SQL语句
 		db.ShowSQL(true)
 		//会在控制台打印调试及以上的信息

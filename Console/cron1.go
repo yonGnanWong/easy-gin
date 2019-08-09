@@ -1,7 +1,8 @@
-package Cron
+package Console
 
 import "fmt"
 
-func test1()  {
+func Test1()  {
 	fmt.Print("cron test1 running")
+	return
 }

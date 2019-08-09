@@ -16,7 +16,7 @@ type ConfigParam struct{
 }
 
 //初始化config数据
-func InitConfig() {
+func initConfig() {
 	//viper 读取配置文件参数
 	viper.AddConfigPath("Config")
 	//读取dev配置文件.如果设计配置文件的切换请在提交前修改
