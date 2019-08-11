@@ -26,8 +26,7 @@ export GOPROXY=https://goproxy.io或者阿里云代理https://mirrors.aliyun.com
 │   ├── app.go
 │   ├── config.go
 │   ├── cron.go
-│   ├── database.go
-│   ├── redis.go
+│   ├── log.go
 │   └── server.go
 ├── Config
 │   ├── dev.yaml
@@ -35,25 +34,36 @@ export GOPROXY=https://goproxy.io或者阿里云代理https://mirrors.aliyun.com
 │   └── qa.yaml
 ├── Console
 │   └── cron1.go
+├── Dockerfile
 ├── Helpers
 │   ├── array.go
-│   ├── errorcode.go
 │   ├── readme.md
-│   ├── request.go
-│   └── string.go
+│   └── request.go
 ├── Logs
-│   ├── 2019-08-08.log
-│   └── 2019-08-09.log
+│   ├── 2019-08-11.log
+│   └── 2019-08-12.log
 ├── Middleware
-│   ├── header.go
-│   ├── log.go
+│   ├── Header
+│   │   └── header.go
+│   ├── Log
+│   │   └── log.go
 │   └── readme.md
 ├── Models
-│   └── db
+│   ├── db
+│   │   ├── course.go
+│   │   └── user.go
+│   └── test.go
 ├── Routers
 │   └── router.go
 ├── Service
-│   └── server.go
+│   ├── Bean
+│   │   └── factory.go
+│   ├── Database
+│   │   ├── database.go
+│   │   └── redis.go
+│   └── Server
+│       └── server.go
+├── build.sh
 ├── go.mod
 ├── go.sum
 ├── main.go

@@ -3,23 +3,16 @@ package Routers
 import (
 	"gin/Api/v1"
 	"gin/Middleware/Header"
-	"gin/Middleware/Log"
 	"github.com/gin-gonic/gin"
-	"io"
 	"net/http"
-	"os"
 )
 
 func InitRouters(R *gin.Engine) {
 	//加载中间件模块
 	//终止前端options请求,直接放回
 	R.Use(Header.Options)
-	//R.Use(Middleware.Logger())
 	R.Use(gin.Recovery())
-
-
 	R.Use(gin.Logger())
-	//R.Use(Middleware.GlobalMiddleware)
 
 	//404处理
 	R.NoRoute(func(c *gin.Context) {

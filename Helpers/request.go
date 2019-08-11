@@ -16,7 +16,7 @@ func HttpRequest(api string,json string,method string) (string, error) {
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		return "", ApiServerErrors
+		return "", err
 	}
 
 	//关闭请求体
@@ -24,10 +24,10 @@ func HttpRequest(api string,json string,method string) (string, error) {
 			_ = resp.Body.Close()
 		}()
 
-	body, _ := ioutil.ReadAll(resp.Body)
+	body, err := ioutil.ReadAll(resp.Body)
 
 	if !(resp.StatusCode == 200) {
-		return "", ApiServerError
+		return "", err
 	}
 	return string(body), nil
 }

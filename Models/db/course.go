@@ -5,10 +5,10 @@ import (
 )
 
 type Course struct {
-	Id        int       `xorm:"not null pk autoincr comment('主键') INT(11)"`
-	UserId    int       `xorm:"comment('用户id') INT(11)"`
-	Course    string    `xorm:"comment('课程') VARCHAR(20)"`
-	CreatedAt time.Time `xorm:"TIMESTAMP"`
-	UpdatedAt time.Time `xorm:"TIMESTAMP"`
-	DeletedAt time.Time `xorm:"TIMESTAMP"`
+	Id        int       `json:"id" xorm:"not null pk autoincr comment('主键') INT(11)"`
+	UserId    int       `json:"user_id" xorm:"comment('用户id') INT(11)"`
+	Course    string    `json:"course" xorm:"comment('课程') VARCHAR(20)"`
+	CreatedAt time.Time `json:"created_at" xorm:"TIMESTAMP"`
+	UpdatedAt time.Time `json:"updated_at" xorm:"TIMESTAMP"`
+	DeletedAt time.Time `json:"deleted_at" xorm:"TIMESTAMP"`
 }

@@ -1,9 +1,9 @@
 package main
 
 import (
-    "gin/App"
+   "gin/App"
 )
 
 func main() {
-    App.Run()
+   App.Run()
 }
