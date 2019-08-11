@@ -1,4 +1,4 @@
-package Middleware
+package App
 
 import (
 	"github.com/gin-gonic/gin"
@@ -7,19 +7,17 @@ import (
 	"time"
 )
 
-func Logger() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		f := initLog()
-		gin.DefaultWriter = io.MultiWriter(f)
-		//继续执行接下来的中间件
-		c.Next()
-	}
-}
-
-func initLog() io.Writer{
+func initLog()  {
 	file := pathExist("./logs/")
-	logfile, _ := os.Create(file)
-	return logfile
+	f, _ := os.Create(file)
+
+	//设置gin框架日志处理输入文件指针
+	//gin.DefaultWriter = io.MultiWriter(f)
+
+	//将日志在log和控制台中输出
+	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
+
+	return
 }
 
 //判断目录是否存在,如果不存在则创建并返回log地址

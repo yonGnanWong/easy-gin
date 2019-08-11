@@ -16,11 +16,13 @@ func HttpRequest(api string,json string,method string) (string, error) {
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		return "", ApiServerError
+		return "", ApiServerErrors
 	}
 
 	//关闭请求体
-	defer func() { _ = resp.Body.Close()}()
+	defer func() {
+			_ = resp.Body.Close()
+		}()
 
 	body, _ := ioutil.ReadAll(resp.Body)
 

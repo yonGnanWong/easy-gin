@@ -1,13 +1,28 @@
 package Models
 
 import (
-	"gin/Database"
 	"gin/Models/db"
+	"gin/Service/Database"
+	"log"
 )
 
-func GetTestData() db.Test  {
-	var test db.Test
-	Database.Db.ID(1).Get(&test)
+//获取数据
+func GetTestData() *db.User  {
+	var test db.User
 	// SELECT * FROM user Where id = 1
-	return test
+	result ,err := Database.Db.ID(1).Get(&test)
+	if !result  {
+		log.Print(err)
+		return nil
+	}else {
+		return &test
+	}
 }
+
+//插入数据
+//func Insert(p *http.Request)  {
+//	param := p.GetBody
+//	var data db.User
+//	_ = json.Unmarshal(p,data)
+//
+//}

@@ -73,5 +73,7 @@ xrom cmd工具
 > * dump Dump数据库中所有结构和数据到标准输出
 > * source 从标注输入中执行SQL文件
 > * driver 列出所有支持的数据库驱动
+> 执行一次mysql表到struct的装换命令 
+xorm reverse mysql root:123456@\(127.0.0.1:3306\)/test\?charset=utf8 $GOPATH/pkg/mod/github.com/go-xorm/cmd/xorm@v0.0.0-20190426080617-f87981e709a1/templates/goxorm /Users/yongnan_wong/Documents/obj/uuzu/gin/Models/db
     
       

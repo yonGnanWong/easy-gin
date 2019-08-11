@@ -1,7 +1,7 @@
 package App
 
 import (
-	"gin/Database"
+	"gin/Service/Database"
 	"gin/Routers"
 	"gin/Service/Server"
 
@@ -15,12 +15,15 @@ func Run() {
 	//初始化框架配置
 	//InitLog()
 	initConfig()
+	initLog()
 	Database.InitDb()
 	Database.InitRedis()
 	Routers.InitRouters(R)
-	//initCron()
+
+	//注册crontab服务
+	initCron()
 
 	//server start
-	s := InitServer()
+	s := initServer()
 	Server.ListenAndServer(s)
 }

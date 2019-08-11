@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func InitServer() *http.Server {
+func initServer() *http.Server {
 	//设置gin模式
 	gin.SetMode(Config.RunMode)
 

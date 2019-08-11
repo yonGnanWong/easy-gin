@@ -1,4 +1,4 @@
-package Middleware
+package Header
 
 import (
 	"github.com/gin-gonic/gin"
