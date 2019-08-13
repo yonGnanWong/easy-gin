@@ -23,7 +23,7 @@ func InitRouters(R *gin.Engine) {
 	r1 := R.Group("api/v1")
 	{
 		//路由设置示例
-		r1.POST("/post", v1.C)
+		r1.POST("/c", v1.C)
 		r1.GET("/", v1.R)
 	}
 

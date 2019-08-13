@@ -16,14 +16,17 @@ func Run() {
 	//InitLog()
 	initConfig()
 	initLog()
-	//注册crontab服务
-	initCron()
+	//注册自定义验证
+	initValidator()
 
 	Database.InitDb()
 	Database.InitRedis()
 	Routers.InitRouters(R)
-
+	
 	//server start
 	s := initServer()
 	Server.ListenAndServer(s)
+
+	//注册crontab服务
+	initCron()
 }

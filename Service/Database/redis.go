@@ -6,7 +6,11 @@ import (
 	"log"
 )
 
-var Redis *redis.Client
+var Redis redisConn
+
+type Conn struct {
+	client *redis.Client
+}
 
 func InitRedis() {
 	r := redis.NewClient(&redis.Options{
@@ -18,5 +22,21 @@ func InitRedis() {
 	if err != nil {
 		log.Panic("redis init error")
 	}
-	Redis = r
+	Con := &Conn{client:r,}
+	Redis = Con
+}
+
+func (c *Conn) Get()  {
+
+}
+
+func (c *Conn) Set()  {
+
+}
+
+func (c *Conn) SetNx()  {
+
+}
+func (c *Conn) Delete()  {
+
 }

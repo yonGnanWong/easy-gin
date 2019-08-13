@@ -1,4 +1,4 @@
-Port: ":8080"
+Server: "127.0.0.1:8080"
 Env: "product"
 Debug: false
 RunMode: release

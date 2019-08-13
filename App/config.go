@@ -11,7 +11,7 @@ var Config ConfigParam
 type ConfigParam struct{
 	DEBUG bool
 	ENV string
-	Port string
+	Server string
 	RunMode string
 }
 
@@ -30,6 +30,6 @@ func initConfig() {
 	//初始化全局config结构体
 	Config.DEBUG = viper.GetBool("Debug")
 	Config.ENV = viper.GetString("Env")
-	Config.Port = viper.GetString("Port")
+	Config.Server = viper.GetString("Server")
 	Config.RunMode = viper.GetString("RunMode")
 }

@@ -1,4 +1,4 @@
-package Helpers
+package Curl
 
 import (
 	"bytes"
@@ -21,8 +21,8 @@ func HttpRequest(api string,json string,method string) (string, error) {
 
 	//关闭请求体
 	defer func() {
-			_ = resp.Body.Close()
-		}()
+		_ = resp.Body.Close()
+	}()
 
 	body, err := ioutil.ReadAll(resp.Body)
 

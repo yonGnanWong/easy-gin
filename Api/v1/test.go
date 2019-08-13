@@ -6,7 +6,11 @@ import (
 )
 
 func C(c *gin.Context) {
-	c.JSON(200, "ha")
+	err := Models.Insert(c)
+	if err != nil {
+		c.JSON(400,err.Error())
+	}
+	c.JSON(200, "插入成功")
 	return
 }
 
