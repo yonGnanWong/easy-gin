@@ -24,7 +24,9 @@ func InitRouters(R *gin.Engine) {
 	{
 		//路由设置示例
 		r1.POST("/c", v1.C)
-		r1.GET("/", v1.R)
+		r1.GET("/r", v1.R)
+		r1.PUT("/u", v1.U)
+		r1.DELETE("/d", v1.D)
 	}
 
 	return

@@ -6,9 +6,9 @@ import (
 
 type User struct {
 	Id        int       `json:"id" xorm:"not null pk autoincr INT(11)"`
-	Name      string    `json:"name" xorm:"comment('姓名') VARCHAR(128)" binding:"required"`
-	Age       int       `json:"age" xorm:"comment('年龄') INT(3)" binding:"required"`
-	Gender    string    `json:"gender" xorm:"comment('性别') VARCHAR(128)" binding:"required"`
+	Name      string    `json:"name" xorm:"comment('姓名') VARCHAR(128)" binding:"required" form:"name"`
+	Age       int       `json:"age" xorm:"comment('年龄') INT(3)" binding:"required" form:"age"`
+	Gender    string    `json:"gender" xorm:"comment('性别') VARCHAR(128)" binding:"required" form:"gender"`
 	CreatedAt time.Time `json:"created_at" xorm:"comment('创建时间') TIMESTAMP"`
 	UpdatedAt time.Time `json:"updated_at" xorm:"comment('更新时间') TIMESTAMP"`
 	DeletedAt time.Time `json:"deleted_at" xorm:"TIMESTAMP"`

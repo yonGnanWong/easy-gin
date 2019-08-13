@@ -1,48 +1,48 @@
 package Models
 
 import (
-	"encoding/json"
 	"errors"
+	"fmt"
 	"gin/Models/db"
 	"gin/Service/Database"
-	"github.com/gin-gonic/gin"
-	"io/ioutil"
 	"log"
-	"strconv"
 )
 
-//获取数据
-func GetTestData() *db.User  {
-	var test db.User
+//读取
+func Get() (test db.User, err error) {
 	// SELECT * FROM user Where id = 1
-	result ,err := Database.Db.ID(1).Get(&test)
-	if !result  {
+	_ ,err = Database.Db.ID(1).Get(&test)
+	if err != nil {
 		log.Print(err)
-		return nil
-	}else {
-		return &test
+		err = errors.New("系统错误")
+		return
 	}
+	return
 }
 
 //插入数据
-func Insert(c *gin.Context) (err error) {
-	data,_ := ioutil.ReadAll(c.Request.Body)
-	if data == nil {
-		err = errors.New("数据不能为空")
-		return
-	}
-	m := map[string]string{}
-	_ = json.Unmarshal([]byte(data),&m)
-	age,_ := strconv.Atoi(m["age"])
-	person := db.User{
-		Name:m["name"],
-		Age:age,
-		Gender:m["gender"],
-	}
-	_ , err = Database.Db.Insert(person)
+func Insert(d db.User) (err error) {
+	_, err = Database.Db.Insert(d)
+	return
+}
+//更新
+func Update(d db.User) (err error) {
+	var bean db.User
+	fmt.Print(d)
+	_, err = Database.Db.Select("id").Where("name = ?",d.Name).Get(&bean)
 	if err != nil {
-		err = errors.New("插入失败")
+		log.Print(err)
 		return
+	}
+	_, err = Database.Db.Id(bean.Id).Update(d)
+	return
+}
+//删除
+func Delete(id int) (err error)  {
+	var bean  db.User
+	rows,err := Database.Db.Id(id).Delete(bean)
+	if rows == 0 || err != nil {
+		err = errors.New("删除失败")
 	}
 	return
 }

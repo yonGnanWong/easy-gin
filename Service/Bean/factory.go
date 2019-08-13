@@ -4,6 +4,6 @@ type Bean struct {
 	p interface{}
 }
 
-func(b *Bean) GetValue(s string) interface{} {
-		
+func (b *Bean) BindJson()  {
+
 }
