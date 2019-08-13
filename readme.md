@@ -2,11 +2,12 @@
 
 ## 使用须知
 ### 文档类
-> gin文档地址 https://github.com/gin-gonic/gin
+> gin文档地址 https://github.com/gin-gonic/gin  
+
+> gin看云文档地址 https://www.kancloud.cn/shuangdeyu/gin_book/949414 
 
 > xorm文档地址 https://www.kancloud.cn/xormplus/xorm/167077
 
-> grpc文档地址
 
 ### 配置类
 > 本项目包管理使用go modules .请将项目放在除gopath以外的目录地址并且设置export GO111MODULE=on
