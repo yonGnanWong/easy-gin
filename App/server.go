@@ -16,11 +16,11 @@ func initServer() {
 		Addr:    Config.Server,
 		Handler: R,
 	}
-	sysType := runtime.GOOS
 
+	sysType := runtime.GOOS
 	if sysType == "linux" {
 		Server.ListenAndServer(server)
-	}else if sysType == "windows" {
+	}else{
 		_ = R.Run(Config.Server)
 	}
 }
