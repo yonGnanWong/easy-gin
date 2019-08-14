@@ -1,10 +1,8 @@
 package App
 
 import (
-	"gin/Service/Database"
 	"gin/Routers"
-	"gin/Service/Server"
-
+	"gin/Service/Database"
 	"github.com/gin-gonic/gin"
 )
 
@@ -22,10 +20,9 @@ func Run() {
 	Database.InitDb()
 	Database.InitRedis()
 	Routers.InitRouters(R)
-	
+
 	//server start
-	s := initServer()
-	Server.ListenAndServer(s)
+	initServer()
 
 	//注册crontab服务
 	initCron()
