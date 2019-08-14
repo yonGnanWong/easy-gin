@@ -8,6 +8,7 @@
 
 > xorm文档地址 https://www.kancloud.cn/xormplus/xorm/167077
 
+> alpine 镜像文档地址 https://yeasy.gitbooks.io/docker_practice/image/dockerfile/copy.html
 
 ### 配置类
 > 本项目包管理使用go modules .请将项目放在除gopath以外的目录地址并且设置export GO111MODULE=on

@@ -56,7 +56,6 @@ func ListenAndServer(server *http.Server){
 	}()
 	//监听信号
 	handleSignal(server)
-	log.Println("signal end")
 }
 
 //处理信号

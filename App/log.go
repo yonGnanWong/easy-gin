@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+
 func initLog()  {
 	fName := "./logs/" + time.Now().Format("2006-01-02") + ".log"
 	f := pathExist(fName)
@@ -23,6 +24,8 @@ func initLog()  {
 	//将日志在log和控制台中输出
 	gin.DisableConsoleColor()
 	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
+
+	F = f
 
 	return
 }

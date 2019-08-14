@@ -21,7 +21,7 @@ func C(c *gin.Context) {
 		c.JSON(400,err.Error())
 		return
 	}
-	c.JSON(200,data)
+	c.JSON(200,"插入成功")
 	return
 }
 

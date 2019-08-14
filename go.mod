@@ -17,6 +17,7 @@ require (
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd v0.0.0-20190719114852-fd7a80b32e1f // indirect
 	github.com/fatih/structs v1.1.0 // indirect
+	github.com/fvbock/endless v0.0.0-20170109170031-447134032cb6 // indirect
 	github.com/gin-gonic/gin v1.4.0
 	github.com/go-kit/kit v0.9.0 // indirect
 	github.com/go-redis/redis v6.15.3+incompatible

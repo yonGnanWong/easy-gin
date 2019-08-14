@@ -2,10 +2,8 @@ package App
 
 import (
 	"gin/Service/Server"
-	"net/http"
-	"runtime"
-
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func initServer() {
@@ -17,10 +15,6 @@ func initServer() {
 		Handler: R,
 	}
 
-	sysType := runtime.GOOS
-	if sysType == "linux" {
-		Server.ListenAndServer(server)
-	}else{
-		_ = R.Run(Config.Server)
-	}
+	Server.ListenAndServer(server)
+	//_ = R.Run(Config.Server)
 }

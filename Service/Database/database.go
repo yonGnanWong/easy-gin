@@ -1,6 +1,7 @@
 package Database
 
 import (
+	"io"
 	"log"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -13,7 +14,7 @@ import (
 var Db *xorm.Engine
 
 //初始化方法
-func InitDb() {
+func InitDb(LogWriter io.Writer) {
 	//初始化数据库配置参数
 	DataType := viper.GetString("Component.Database.DriverName")
 	Addr := viper.GetString("Component.Database.Addr")
@@ -36,7 +37,7 @@ func InitDb() {
 	}
 
 	//将sql写入log
-	//db.SetLogger(xorm.NewSimpleLogger(LogWriter))
+	db.SetLogger(xorm.NewSimpleLogger(LogWriter))
 	//设置db连接池最大链接数和最大打开链接数
 	db.SetMaxIdleConns(MaxIdleConns)
 	db.SetMaxOpenConns(MaxOpenConns)
