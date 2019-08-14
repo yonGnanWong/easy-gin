@@ -2,9 +2,9 @@ FROM golang as build
 
 ENV GOPROXY=https://goproxy.io
 
-ADD . /usr/local/go/src/gin
+ADD . /gin
 
-WORKDIR /usr/local/go/src/gin
+WORKDIR /gin
 
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o application
 

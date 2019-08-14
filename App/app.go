@@ -14,7 +14,6 @@ var F *os.File
 
 func Run() {
 	//初始化框架配置
-	//InitLog()
 	initConfig()
 	initLog()
 	//注册自定义验证
