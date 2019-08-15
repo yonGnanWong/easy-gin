@@ -6,10 +6,10 @@ import (
 	"log"
 )
 
-var Redis redisConn
+var Redis *Conn
 
 type Conn struct {
-	client *redis.Client
+	Client *redis.Client
 }
 
 func InitRedis() {
@@ -22,21 +22,20 @@ func InitRedis() {
 	if err != nil {
 		log.Panic("redis init error")
 	}
-	Con := &Conn{client:r,}
-	Redis = Con
+	Redis = &Conn{Client:r,}
 }
-
-func (c *Conn) Get()  {
-
-}
-
-func (c *Conn) Set()  {
-
-}
-
-func (c *Conn) SetNx()  {
-
-}
-func (c *Conn) Delete()  {
-
-}
+//
+//func (c *Conn) Get()  {
+//
+//}
+//
+//func (c *Conn) Set()  {
+//
+//}
+//
+//func (c *Conn) SetNx()  {
+//
+//}
+//func (c *Conn) Delete()  {
+//
+//}

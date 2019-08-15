@@ -5,12 +5,12 @@ RunMode: release
 Component:
   Database:
     DriverName: "mysql"
-    DataSourceName: "root:123456@(127.0.0.1:3306)/test?charset=utf8mb4"
+    Addr: "root:123456@(127.0.0.1:3306)/test?charset=utf8mb4"
     MaxOpenConns: 50
     MaxIdleConns: 30
   Redis:
-    Addr: "127.0.0.1:3306"
-    Password: "xxxxxxxx"
-    Database: 1
+    Addr: "localhost:6379"
+    Password: ""
+    Database: 0
 #  params:
 #  如果有新参数可放开注释.自己增加

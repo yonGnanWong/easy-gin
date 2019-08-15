@@ -25,7 +25,6 @@ func Run() {
 
 	//server start
 	initServer()
-
 	//注册crontab服务
 	initCron()
 }

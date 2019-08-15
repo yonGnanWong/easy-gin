@@ -18,10 +18,10 @@ RUN echo "http://mirrors.aliyun.com/alpine/v3.7/main/" > /etc/apk/repositories &
 
 WORKDIR /www
 
-COPY --from=build /gin/application /usr/bin/application
+COPY --from=build /gin/application /www/gin/application
 
-ADD ./Config /www/Config
+ADD ./Config /www/gin/Config
 
 RUN chmod +x /usr/bin/application
 
-ENTRYPOINT ["application"]
+CMD ["/www/gin/application"]

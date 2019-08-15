@@ -22,9 +22,22 @@ func Get() (test db.User, err error) {
 
 //插入数据
 func Insert(d db.User) (err error) {
+	//redis 插入
+	_,err = Database.Redis.Client.Set("var1","ni",0).Result()
+	if err != nil {
+		log.Print(err)
+		err = errors.New("插入失败")
+		return
+	}
 	_, err = Database.Db.Insert(d)
+	if err != nil {
+		log.Print(err)
+		err = errors.New("插入失败")
+		return
+	}
 	return
 }
+
 //更新
 func Update(d db.User) (err error) {
 	var bean db.User

@@ -21,12 +21,10 @@ func InitDb(LogWriter io.Writer) {
 	MaxOpenConns := viper.GetInt("Component.Database.MaxOpenConns")
 	MaxIdleConns := viper.GetInt("Component.Database.MaxIdleConns")
 
-	db, err := xorm.NewEngine(DataType, Addr)
-	if err != nil {
-		log.Panic("database error ", err)
-	}
-	if db == nil {
-		log.Panic("database error ")
+	db, _ := xorm.NewEngine(DataType, Addr)
+	//Ping db查看连接
+	if err := db.Ping();err !=nil{
+		log.Panic(err)
 	}
 
 	if viper.GetBool("Debug") {
