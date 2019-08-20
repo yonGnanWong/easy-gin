@@ -24,18 +24,18 @@ func InitRedis() {
 	}
 	Redis = &Conn{Client:r,}
 }
-//
-//func (c *Conn) Get()  {
-//
-//}
-//
-//func (c *Conn) Set()  {
-//
-//}
-//
-//func (c *Conn) SetNx()  {
-//
-//}
-//func (c *Conn) Delete()  {
-//
-//}
+
+func (c *Conn) Get()  {
+
+}
+
+func (c *Conn) Set()  {
+
+}
+
+func (c *Conn) SetNx()  {
+
+}
+func (c *Conn) Delete()  {
+
+}

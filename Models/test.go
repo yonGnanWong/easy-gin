@@ -23,7 +23,7 @@ func Get() (test db.User, err error) {
 //插入数据
 func Insert(d db.User) (err error) {
 	//redis 插入
-	_,err = Database.Redis.Client.Set("var1","ni",0).Result()
+	_,err = Database.Redis.Client.Set("ceshi","nihao",0).Result()
 	if err != nil {
 		log.Print(err)
 		err = errors.New("插入失败")
@@ -51,7 +51,7 @@ func Update(d db.User) (err error) {
 	return
 }
 //删除
-func Delete(id int) (err error)  {
+func Delete(id int) (err error) {
 	var bean  db.User
 	rows,err := Database.Db.Id(id).Delete(bean)
 	if rows == 0 || err != nil {

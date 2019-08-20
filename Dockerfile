@@ -22,6 +22,6 @@ COPY --from=build /gin/application /www/gin/application
 
 ADD ./Config /www/gin/Config
 
-RUN chmod +x /usr/bin/application
+RUN chmod +x /www/gin/application
 
 CMD ["/www/gin/application"]

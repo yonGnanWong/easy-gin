@@ -9,6 +9,7 @@ import (
 
 //创建框架实例,并赋值全局变量R
 var R = gin.New()
+
 //日志文件writter
 var F *os.File
 

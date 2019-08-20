@@ -15,6 +15,6 @@ func initServer() {
 		Handler: R,
 	}
 
-	Server.Run(server)
-	//_ = R.Run(Config.Server)
+	Server.ListenAndServer(server)
+	//_ = R.Run(Config.Server)/**/
 }
